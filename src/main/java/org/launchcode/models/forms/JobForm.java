@@ -22,11 +22,23 @@ public class JobForm {
     @NotNull
     private int employerId;
 
+    @NotNull
+    private int locationId;
+
+    @NotNull
+    private int positionTypeId;
+
+    @NotNull
+    private int coreCompetencyId;
+
+
+
     /*
         TODO #3 - Included other fields needed to create a job,
         with correct validation attributes and display names.
         Don't forget to add getters and setters
      */
+
 
     private ArrayList<Employer> employers;
     private ArrayList<Location> locations;
@@ -42,6 +54,9 @@ public class JobForm {
         */
 
         employers = jobData.getEmployers().findAll();
+        locations = jobData.getLocations().findAll();
+        positionTypes = jobData.getPositionTypes().findAll();
+        coreCompetencies = jobData.getCoreCompetencies().findAll();
 
     }
 
@@ -55,6 +70,30 @@ public class JobForm {
 
     public int getEmployerId() {
         return employerId;
+    }
+
+    public int getLocationId() {
+        return locationId;
+    }
+
+    public void setLocationId(int locationId) {
+        this.locationId = locationId;
+    }
+
+    public int getPositionTypeId() {
+        return positionTypeId;
+    }
+
+    public void setPositionTypeId(int positionTypeId) {
+        this.positionTypeId = positionTypeId;
+    }
+
+    public int getCoreCompetencyId() {
+        return coreCompetencyId;
+    }
+
+    public void setCoreCompetencyId(int coreCompetencyId) {
+        this.coreCompetencyId = coreCompetencyId;
     }
 
     public void setEmployerId(int employerId) {
